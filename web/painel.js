@@ -9,6 +9,19 @@ const contAtencao = document.getElementById("contAtencao");
 const ESCAPES = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
 const escapar = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ESCAPES[c]);
 
+/* Cor da etiqueta: procura a palavra dentro do nome da concessionária */
+const ETIQUETAS = [
+  ["arteris", "etiqueta-arteris"],   // amarelo
+  ["motiva", "etiqueta-motiva"],     // roxo
+  ["ecovias", "etiqueta-ecovias"],   // verde
+];
+
+function classeDaEtiqueta(concessionaria) {
+  const nome = String(concessionaria ?? "").toLowerCase();
+  const achada = ETIQUETAS.find(([palavra]) => nome.includes(palavra));
+  return achada ? achada[1] : "etiqueta-outra";
+}
+
 /* Agrupa por concessionária + rodovia; os grupos mais urgentes e mais cheios vêm primeiro */
 function agrupar(ocorrencias) {
   const grupos = {};
@@ -45,15 +58,13 @@ function htmlOcorrencia(oc) {
 }
 
 function htmlCartao(grupo) {
-  const classeEtiqueta = grupo.concessionaria.toLowerCase() === "arteris"
-    ? "etiqueta-arteris" : "etiqueta-motiva";
   return `
     <article class="cartao ${escapar(grupo.categoria)}">
       <div class="cartao-topo">
         <div class="rodovia-nome" title="${escapar(grupo.rodovia)}">
           ${escapar(grupo.rodovia)} (${grupo.itens.length})
         </div>
-        <span class="etiqueta ${classeEtiqueta}">${escapar(grupo.concessionaria)}</span>
+        <span class="etiqueta ${classeDaEtiqueta(grupo.concessionaria)}">${escapar(grupo.concessionaria)}</span>
       </div>
       <div class="ocorrencias">${grupo.itens.map(htmlOcorrencia).join("")}</div>
     </article>`;
@@ -84,6 +95,7 @@ async function atualizar() {
     if (!resp.ok) throw new Error(resp.status);
     desenhar(await resp.json());
   } catch (erro) {
+    console.error("Falha ao atualizar o painel:", erro);
     metaInfo.textContent = "Aguardando a primeira coleta...";
   }
 }

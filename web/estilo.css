@@ -112,15 +112,25 @@ main {
   padding: 3px 8px;
   border-radius: 999px;
 }
-.etiqueta-motiva {
-  background: rgba(56, 189, 248, 0.15);
-  color: #7dd3fc;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+.etiqueta-arteris {          /* amarelo */
+  background: rgba(250, 204, 21, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(250, 204, 21, 0.35);
 }
-.etiqueta-arteris {
-  background: rgba(249, 115, 22, 0.15);
-  color: #fdba74;
-  border: 1px solid rgba(249, 115, 22, 0.35);
+.etiqueta-motiva {           /* roxo */
+  background: rgba(168, 85, 247, 0.15);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+.etiqueta-ecovias {          /* verde */
+  background: rgba(74, 222, 128, 0.15);
+  color: #86efac;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+}
+.etiqueta-outra {            /* concessionária sem cor definida */
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 /* ---------- ocorrências dentro do cartão ---------- */
