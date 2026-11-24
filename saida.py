@@ -5,7 +5,9 @@ from datetime import datetime
 
 from classificacao import classificar
 from modelos import Ocorrencia
+from datetime import datetime, timedelta, timezone
 
+BRASILIA = timezone(timedelta(hours=-3))
 
 def gravar_json(ocorrencias: list[Ocorrencia], caminho: str) -> None:
     itens = []
@@ -15,7 +17,7 @@ def gravar_json(ocorrencias: list[Ocorrencia], caminho: str) -> None:
     itens.sort(key=lambda i: i["prioridade"])
 
     conteudo = {
-        "atualizado_em": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "atualizado_em": datetime.now(BRASILIA).strftime("%Y-%m-%d %H:%M:%S"),
         "ocorrencias": itens,
     }
 
