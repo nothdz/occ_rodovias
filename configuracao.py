@@ -3,6 +3,8 @@ PORTA_PAINEL = 8050
 MAX_THREADS = 8
 TIMEOUT = 15
 
+TIMEOUT_ECOVIAS_NORTEMINAS = (10, 60)
+
 TRECHOS_MOTIVA = {
     "Fernão Dias (BR-381) - Sentido Norte": (
         "https://rodovias.motiva.com.br/bin/mapConcession/?action=internal&id=minas_sp_br381_sul_norte&type=single&concessionId=minassp&services=Toll,%20EletronicToll,%20SAU,%20TruckDriverRestStation,%20PoliceStation"
@@ -71,4 +73,45 @@ CABECALHOS_ARTERIS = {
     "User-Agent": "Mozilla/5.0",
     "Accept": "application/json",
     "Referer": "https://www.arteris.com.br/",
+}
+
+TRECHOS_ECOVIAS = {
+    "Ecovias das Gerais": "https://www.ecoviasdasgerais.com.br/api/interactive-map/highway-condition/",
+}
+
+CABECALHOS_ECOVIAS = {
+    "Accept": "*/*",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Referer": "https://www.ecoviasdasgerais.com.br/condicoes-da-via/",
+    "Sec-Ch-Ua": '"Chromium";v="158", "Not.A/Brand";v="24", "Google Chrome";v="158"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/158.0.0.0 Safari/537.36"
+    ),
+}
+
+TRECHOS_ECOVIAS_NORTEMINAS = {
+    "Ecovias Norte Minas": "https://www.ecoviasnorteminas.com.br/api/playful-map",
+    "Ecovias Leste Paulista": "https://www.ecoviaslestepaulista.com.br/api/playful-map",
+    "Ecovias Imigrantes": "https://www.ecoviasimigrantes.com.br/api/playful-map",
+}
+
+CABECALHOS_ECOVIAS_NORTEMINAS = {
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Referer": "https://www.ecoviasnorteminas.com.br/",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/158.0.0.0 Safari/537.36"
+    ),
 }

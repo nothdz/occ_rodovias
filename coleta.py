@@ -1,8 +1,16 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import arteris
+import ecovias
+import ecovias_norteminas
 import motiva
-from configuracao import MAX_THREADS, TRECHOS_ARTERIS, TRECHOS_MOTIVA
+from configuracao import (
+    MAX_THREADS,
+    TRECHOS_ARTERIS,
+    TRECHOS_ECOVIAS,
+    TRECHOS_ECOVIAS_NORTEMINAS,
+    TRECHOS_MOTIVA,
+)
 from modelos import Ocorrencia
 
 
@@ -10,6 +18,8 @@ def coletar_tudo() -> list[Ocorrencia]:
     tarefas = (
         [(motiva.coletar_trecho, n, u) for n, u in TRECHOS_MOTIVA.items()]
         + [(arteris.coletar_trecho, n, u) for n, u in TRECHOS_ARTERIS.items()]
+        + [(ecovias.coletar_trecho, n, u) for n, u in TRECHOS_ECOVIAS.items()]
+        + [(ecovias_norteminas.coletar_trecho, n, u) for n, u in TRECHOS_ECOVIAS_NORTEMINAS.items()]
     )
 
     ocorrencias: list[Ocorrencia] = []
