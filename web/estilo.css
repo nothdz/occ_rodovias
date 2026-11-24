@@ -1,0 +1,143 @@
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1318;
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+    }
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: #181e26;
+      border-bottom: 1px solid #2b3442;
+      flex: 0 0 auto;
+    }
+    .topo h1 {
+      margin: 0;
+      font-size: 17px;
+    }
+    .meta {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .container {
+      flex: 1 1 auto;
+      padding: 20px;
+      column-width: 380px;        /* largura adaptativa por coluna */
+      column-gap: 16px;
+      column-fill: auto;          /* desce até o limite da tela e segue na coluna ao lado */
+      overflow-x: auto;           /* rola para o lado se passar da largura do monitor */
+    }
+    .grupo-card {
+      break-inside: avoid;        /* não corta o card no meio */
+      margin-bottom: 16px;
+      background: #171c24;
+      border: 1px solid #2a3341;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .grupo-card.alerta-acidente {
+      background: rgba(239, 68, 68, 0.14);
+      border-color: #ef4444;
+    }
+    .grupo-card.alerta-obras {
+      background: rgba(249, 115, 22, 0.14);
+      border-color: #f97316;
+    }
+    .grupo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      padding-bottom: 8px;
+    }
+    .rodovia-nome {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .conc-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-weight: bold;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .conc-motiva {
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .conc-arteris {
+      background: rgba(249, 115, 22, 0.15);
+      color: #fdba74;
+      border: 1px solid rgba(249, 115, 22, 0.35);
+    }
+    .lista-ocorrencias {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ocorrencia-item {
+      background: #10141a;
+      border: 1px solid #232b38;
+      border-radius: 7px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+    .ocorrencia-item.alerta-acidente {
+      background: rgba(127, 29, 29, 0.45);
+      border-color: #ef4444;
+    }
+    .ocorrencia-item.alerta-obras {
+      background: rgba(124, 45, 18, 0.45);
+      border-color: #f97316;
+    }
+    .ocorrencia-topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+    .badge {
+      background: #232c3a;
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: #e2e8f0;
+    }
+    .desc {
+      color: #f8fafc;
+      margin: 0;
+    }
+    .latlong {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+    .vazio {
+      column-span: all;
+      text-align: center;
+      padding: 40px;
+      background: #171c24;
+      border-radius: 10px;
+      border: 1px solid #2a3341;
+      color: #94a3b8;
+    }
