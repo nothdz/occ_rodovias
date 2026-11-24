@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-  <div class="topo">
+  <header class="topo">
     <h1>Ocorrências nas Rodovias</h1>
     <div class="meta" id="metaInfo">Carregando...</div>
-  </div>
-  <div class="container" id="cardsContainer"></div>
+  </header>
+
+  <main>
+    <section class="secao secao-acidentes">
+      <h2>Acidentes registrados <span class="contagem" id="contAcidentes"></span></h2>
+      <div class="caixa" id="listaAcidentes"></div>
+    </section>
+
+    <section class="secao secao-atencao">
+      <h2>Pontos de atenção <span class="contagem" id="contAtencao"></span></h2>
+      <div class="caixa" id="listaAtencao"></div>
+    </section>
+  </main>
+
   <script src="painel.js"></script>
 </body>
 </html>
