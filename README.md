@@ -10,8 +10,8 @@ Painel que reúne, em uma única página, as ocorrências de trânsito (acidente
 
 ```
 ┌────────────────────┐     ┌──────────────┐     ┌──────────────────┐
-│ Motiva e   │ ──► │ Coleta em    │ ──► │ web/dados.json   │
-│ da Arteris         │     │ Python       │     │                  │
+│  Motiva e Arteris  │ ──► │ Coleta em    │ ──► │ web/dados.json   │
+│                    │     │ Python       │     │                  │
 └────────────────────┘     └──────────────┘     └────────┬─────────┘
                                                          │ lido pela página
                                                          ▼
