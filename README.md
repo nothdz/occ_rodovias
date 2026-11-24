@@ -10,7 +10,7 @@ Painel que reúne, em uma única página, as ocorrências de trânsito (acidente
 
 ```
 ┌────────────────────┐     ┌──────────────┐     ┌──────────────────┐
-│  Motiva e Arteris  │ ──► │ Coleta em    │ ──► │ web/dados.json   │
+│  Concessionária    │ ──► │ Coleta em    │ ──► │ web/dados.json   │
 │                    │     │ Python       │     │                  │
 └────────────────────┘     └──────────────┘     └────────┬─────────┘
                                                          │ lido pela página
@@ -26,31 +26,6 @@ Painel que reúne, em uma única página, as ocorrências de trânsito (acidente
 3. A página (`index.html` + `estilo.css` + `painel.js`) lê o `dados.json` sozinha a cada 1 minuto e redesenha os cartões, sem recarregar.
 
 A coleta (Python) e a interface (HTML, CSS e JS) são totalmente separadas: o único contato entre elas é o arquivo `dados.json`.
-
----
-
-## Estrutura do projeto
-
-```
-.
-├── .github/workflows/
-│   └── atualizar.yml        # agendamento e publicação automática
-├── web/
-│   ├── index.html           # estrutura da página
-│   ├── estilo.css           # aparência
-│   └── painel.js            # lê o dados.json e monta os cartões
-├── configuracao.py          # trechos, cabeçalhos, intervalo, porta, tempo limite
-├── modelos.py               # estrutura de dados da ocorrência
-├── classificacao.py         # regra de prioridade (acidente > obras > normal)
-├── motiva.py                # coleta de um trecho da Motiva
-├── arteris.py               # coleta de um trecho da Arteris
-├── coleta.py                # coleta todos os trechos em paralelo
-├── saida.py                 # grava o dados.json
-├── servidor.py              # servidor local simples (só para uso local)
-├── principal.py             # modo local contínuo: coleta + servidor
-├── coletar_uma_vez.py       # coleta uma vez e termina (usado na publicação)
-└── requirements.txt         # dependências
-```
 
 ---
 
