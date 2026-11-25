@@ -82,40 +82,6 @@ python -m http.server 8050 --directory web
 
 ---
 
-## Publicar na web (de graça)
-
-A publicação usa o **GitHub Actions** (agendador) e o **GitHub Pages** (hospedagem). Em repositório **público**, o uso é gratuito. Nada precisa ficar rodando no seu computador.
-
-### Primeira publicação
-
-1. Crie um repositório **público** no GitHub e envie todo o projeto, incluindo as pastas `web/` e `.github/workflows/`.
-2. No repositório, abra **Settings → Pages**. Em **Build and deployment → Source**, escolha **GitHub Actions**. Não clique em "Configure" nos modelos sugeridos e deixe o campo "Custom domain" vazio.
-3. Abra a aba **Actions**, escolha o fluxo **Atualizar painel** e clique em **Run workflow**.
-4. Aguarde os dois blocos (**coletar** e **publicar**) ficarem verdes (cerca de 1 minuto).
-5. O painel estará em `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
-
-### Atualização automática
-
-O arquivo `.github/workflows/atualizar.yml` tem um agendamento (`cron`) que repete o processo sozinho. O intervalo mínimo aceito pelo GitHub é de **5 minutos**:
-
-```yaml
-on:
-  schedule:
-    - cron: "*/5 * * * *"
-```
-
-Para mudar o intervalo, altere esse valor (por exemplo, `"*/30 * * * *"` para 30 minutos) e salve.
-
-Para conferir se o agendamento funciona, espere alguns minutos e veja na aba **Actions** novas execuções com o evento **schedule**, ou observe o horário "Atualizado em" no topo do painel.
-
-### Cuidados com a publicação
-
-- **Desligamento por inatividade:** em repositório público, o GitHub desativa os agendamentos se o repositório ficar **60 dias sem atividade**. Se o painel parar de atualizar, vá em **Actions**, reative o fluxo e rode uma vez. Um commit qualquer de vez em quando também evita isso.
-- **Atrasos:** o GitHub pode atrasar ou pular execuções agendadas em horários de pico, então o intervalo real pode ser maior que o configurado.
-- **Código público:** qualquer pessoa pode ver o repositório. Não coloque senhas, chaves ou dados sigilosos nele.
-
----
-
 ## Configuração
 
 Tudo fica em `configuracao.py`:
@@ -169,4 +135,4 @@ Edite `classificacao.py`. Hoje, texto com "acidente" é prioridade 1 (vermelho),
 
 ## Aviso
 
-Projeto independente, sem vínculo com a Motiva, a Arteris ou o GitHub. As informações exibidas são de responsabilidade das concessionárias e podem ter atraso ou estar incompletas. Não use o painel como única fonte para decisões de segurança.
+Projeto independente, sem vínculo com a Motiva, Arteris, Ecovias ou o GitHub. As informações exibidas são de responsabilidade das concessionárias e podem ter atraso ou estar incompletas. Não use o painel como única fonte para decisões de segurança.
