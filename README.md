@@ -126,9 +126,8 @@ Edite `classificacao.py`. Hoje, texto com "acidente" é prioridade 1 (vermelho),
 
 ---
 
-## Pontos de atenção
+## Atenção
 
-- Os trechos **Anhanguera (SP-330)** e **Bandeirantes (SP-348)** estão com o mesmo endereço (`origin`/`destination`) nos sentidos Norte e Sul. Isso faz as mesmas ocorrências aparecerem duas vezes, com sentidos diferentes. Convém inverter `origin` e `destination` em um dos lados, como já está na Dutra e na Rodovia do Café.
 - Os dados vêm de endereços públicos usados pelos sites das concessionárias. Se elas mudarem o formato ou passarem a bloquear as consultas, o painel pode parar de funcionar.
 
 ---
