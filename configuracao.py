@@ -13,7 +13,7 @@ TRECHOS_MOTIVA = {
         "https://rodovias.motiva.com.br/bin/mapConcession/?action=internal&id=minas_sp_br381_norte_sul&type=single&concessionId=minassp&services=Toll,%20EletronicToll,%20SAU,%20TruckDriverRestStation,%20PoliceStation"
     ),
     "Anhanguera (SP-330) - Sentido Norte": (
-        "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp330&origin=139&destination=1&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
+        "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp330&origin=1&destination=139&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
     ),
     "Anhanguera (SP-330) - Sentido Sul": (
         "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp330&origin=139&destination=1&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
@@ -22,7 +22,7 @@ TRECHOS_MOTIVA = {
         "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp348&origin=1&destination=139&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
     ),
     "Bandeirantes (SP-348) - Sentido Sul": (
-        "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp348&origin=1&destination=139&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
+        "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=autoban_sp348&origin=139&destination=1&concessionId=autoban&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
     ),
     "Rodovia do Café (BR-376/PR) - Sentido Norte": (
         "https://rodovias.motiva.com.br/bin/mapConcession/?action=segment&id=prvias_br376&origin=291&destination=281&concessionId=prvias&services=Toll,%20EletronicToll,%20CustomsStation,%20PoliceStation,%20SAU,%20TruckDriverRestStation"
